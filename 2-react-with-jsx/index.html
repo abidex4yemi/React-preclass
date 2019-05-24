@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React + JSX</title>
+  <style>
+    h1 {
+      color: maroon;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+  
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script>
+      const elememt = React.createElement('div', {className: "myElement"}, React.createElement('h1', {className: "heading"}, 'Hello Yemi'),
+      React.createElement('p', {className: 'para'}, 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo animi delectus maiores veritatis aut ex magni ratione dolorem. Veniam, dignissimos maxime. Et, cumque? Est eum harum sequi tenetur beatae?'));
+
+      ReactDOM.render(elememt, document.getElementById('root'));
+    </script>
+</body>
+</html>
