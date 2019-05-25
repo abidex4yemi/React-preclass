@@ -17,17 +17,26 @@
     return (<h1>My name is { props.name } and i'm { props.age }</h1> );
   }
 
-  const MyElement = (props) => {
+  const Input = () => {
+    return (
+      <input type="text" className="input" name="name" />
+    );
+  }
+
+  const Button = () => {
+    return(<button type="button">Click me</button>);
+  }
+
+  const App = () => {
     return (
       <div>
-         <MyHeader name="Yemi" age={20}/>
-         <MyHeader name="Jane" age={25}/>
-         <MyHeader name="Doe" age={30}/>
-         <MyHeader name="Shola" age={18}/>
+        <MyHeader name="Yemi" age={25} />
+        <Input />
+        <Button />
       </div>
-      );
-  };
+    );
+  }
 
-  ReactDOM.render(<MyElement />, document.getElementById('root'));
+  ReactDOM.render(<App />, document.getElementById('root'));
 </script>
 </html>
