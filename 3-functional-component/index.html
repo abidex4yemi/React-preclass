@@ -13,15 +13,18 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 <script type="text/babel">
+  const MyHeader = (props) => {
+    return (<h1>My name is { props.name } and i'm { props.age }</h1> );
+  }
+
   const MyElement = (props) => {
-    console.log(props);
     return (
       <div>
-        <h1>This is a functional component { props.name }</h1>  
+         <MyHeader name={props.name} age={props.age}/>
       </div>
       );
   };
 
-  ReactDOM.render(<MyElement name="Yemi" />, document.getElementById('root'));
+  ReactDOM.render(<MyElement name="Yemi" age={20}/>, document.getElementById('root'));
 </script>
 </html>
