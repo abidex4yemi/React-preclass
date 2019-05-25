@@ -15,9 +15,13 @@
 <script type="text/babel">
   const MyElement = (props) => {
     console.log(props);
-    return <div>This is a functional component</div>
+    return (
+      <div>
+        <h1>This is a functional component { props.name }</h1>  
+      </div>
+      );
   };
 
-  ReactDOM.render(<MyElement />, document.getElementById('root'));
+  ReactDOM.render(<MyElement name="Yemi" />, document.getElementById('root'));
 </script>
 </html>
