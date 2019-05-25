@@ -20,11 +20,14 @@
   const MyElement = (props) => {
     return (
       <div>
-         <MyHeader name={props.name} age={props.age}/>
+         <MyHeader name="Yemi" age={20}/>
+         <MyHeader name="Jane" age={25}/>
+         <MyHeader name="Doe" age={30}/>
+         <MyHeader name="Shola" age={18}/>
       </div>
       );
   };
 
-  ReactDOM.render(<MyElement name="Yemi" age={20}/>, document.getElementById('root'));
+  ReactDOM.render(<MyElement />, document.getElementById('root'));
 </script>
 </html>
