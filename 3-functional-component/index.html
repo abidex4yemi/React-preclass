@@ -46,15 +46,32 @@
       };
     }
 
+    tick() {
+      this.setState(prevState => ({
+        date: new Date()
+      }));
+    }
+
+    componentDidMount() {
+      this.timerID = setInterval(() => {
+        this.tick();
+      }, 1000);
+    }
+
+    componentWillUnMount() {
+      clearInterval(this.timerID);
+    }
+
     render(){
       return(
       <div>
         <h1>Hello world!</h1>
+        <p>Clock type: {this.props.color}</p>
         <h2>It is {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
     }
   }
-  ReactDOM.render(<Clock />, document.getElementById('root'));
+  ReactDOM.render(<Clock color="red"/>, document.getElementById('root'));
 </script>
 </html>
