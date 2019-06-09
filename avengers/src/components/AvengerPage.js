@@ -1,7 +1,8 @@
 import React from 'react';
-import { avengers } from '../data';
 
 export const AvengerPage = props => {
+	const { avengers } = props.location.state;
+
 	const id = props.match.params.id;
 	const avenger = avengers.find(avenger => `${avenger.id}` === id);
 
@@ -18,5 +19,5 @@ export const AvengerPage = props => {
 		);
 	}
 
-	return <div>Character with {id} does not exist!</div>;
+	return <div>Character with does not exist!</div>;
 };

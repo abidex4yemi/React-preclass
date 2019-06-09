@@ -3,7 +3,27 @@ import { Route, Link } from 'react-router-dom';
 import { Home } from './components/Home';
 import { AvengersList } from './components/AvengersList';
 import { AvengerPage } from './components/AvengerPage';
+import { avengers } from './data';
 import './App.css';
+
+const routes = [
+	{
+		id: 1,
+		path: '/',
+		Component: Home
+	},
+	{
+		id: 4,
+		path: '/avengers',
+		Component: AvengersList,
+		fetchInitialData: avengers
+	},
+	{
+		id: 3,
+		path: '/avengers/:id',
+		Component: AvengerPage
+	}
+];
 
 function App() {
 	return (
@@ -16,9 +36,16 @@ function App() {
 					<Link to="/avengers">Avengers</Link>
 				</li>
 			</ul>
-			<Route exact path="/" component={Home} />
-			<Route exact path="/avengers" component={AvengersList} />
-			<Route exact path="/avengers/:id" component={AvengerPage} />
+			{routes.map(({ path, Component, id, fetchInitialData }) => {
+				return (
+					<Route
+						key={id}
+						exact
+						path={path}
+						render={props => <Component {...props} fetchInitialData={fetchInitialData} />}
+					/>
+				);
+			})}
 		</div>
 	);
 }
