@@ -7,7 +7,7 @@ import { addMovie } from '../actions';
 const MovieList = props => {
 	const [newMovie, setNewMovie] = useState('');
 
-	const { user, moviesToWatch, movies, addMovie } = props;
+	const { user, moviesToWatch, movies, addMovie } = props.movies;
 
 	return (
 		<div>
@@ -15,7 +15,13 @@ const MovieList = props => {
 			<p>Movies To Watch: {moviesToWatch}</p>
 			{movies.map(movie => <Movie key={uuid()} movie={movie} />)}
 			<input type="text" value={newMovie} onChange={evt => setNewMovie(evt.target.value)} />
-			<button type="button" onClick={() => addMovie(newMovie)}>
+			<button
+				type="button"
+				onClick={() => {
+					props.addMovie(newMovie);
+					setNewMovie('');
+				}}
+			>
 				Add Movie
 			</button>
 		</div>

@@ -1,27 +1,8 @@
 import React from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { store } from './store/store';
 import MovieList from './components/MovieList';
 import './App.css';
-
-const reducer = () => {
-	return {
-		user: {
-			name: 'Yemi'
-		},
-		movies: ['Star wars', 'Lord of the ring', 'Harry Porter'],
-		todoList: [
-			{
-				task: 'Learn Redux',
-				id: 0,
-				completed: false
-			}
-		],
-		moviesToWatch: 13
-	};
-};
-
-const store = createStore(reducer);
 
 function App() {
 	return (
