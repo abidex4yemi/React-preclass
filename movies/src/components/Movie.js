@@ -3,7 +3,7 @@ import React from 'react';
 const Movie = props => {
 	const { movie } = props;
 
-	return <div>{movie}</div>;
+	return <h4>{movie}</h4>;
 };
 
 export default Movie;
