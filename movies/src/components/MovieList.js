@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 import { connect } from 'react-redux';
 import Movie from './Movie';
 
@@ -9,7 +10,7 @@ const MovieList = props => {
 		<div>
 			<h2>User: {user.name}</h2>
 			<p>Movies To Watch: {moviesToWatch}</p>
-			{movies.map(movie => <Movie movie={movie} />)}
+			{movies.map(movie => <Movie key={uuid()} movie={movie} />)}
 		</div>
 	);
 };
